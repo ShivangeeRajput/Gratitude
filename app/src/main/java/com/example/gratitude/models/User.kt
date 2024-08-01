@@ -1,4 +1,4 @@
-package com.example.notify.models
+package com.example.gratitude.models
 
 data class User(
     val email: String,

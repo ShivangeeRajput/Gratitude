@@ -1,6 +1,6 @@
-package com.example.notify.di
+package com.example.gratitude.di
 
-import com.example.notify.api.UserAPI
+import com.example.gratitude.api.UserAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

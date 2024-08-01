@@ -1,4 +1,4 @@
-package com.example.notify
+package com.example.gratitude
 
 import org.junit.Test
 
