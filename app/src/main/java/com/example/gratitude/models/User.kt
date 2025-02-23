@@ -5,3 +5,8 @@ data class User(
     val mobile: String,
     val username: String
 )
+
+data class UserRequest(
+    val message: String,
+    val user: User
+)
