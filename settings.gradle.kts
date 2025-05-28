@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Gratitude"
+rootProject.name = "Gratitude-My Healing Journey"
 include(":app")
  
