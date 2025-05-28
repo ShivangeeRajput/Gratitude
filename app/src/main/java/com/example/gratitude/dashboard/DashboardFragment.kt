@@ -10,9 +10,6 @@ import com.example.gratitude.R
 
 class DashboardFragment : Fragment() {
 
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
