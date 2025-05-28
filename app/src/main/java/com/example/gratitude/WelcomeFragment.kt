@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 
-class SplashFragment : Fragment() {
+class WelcomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -15,7 +15,7 @@ class SplashFragment : Fragment() {
     ): View? {
 
 
-        return inflater.inflate(R.layout.fragment_splash, container, false)
+        return inflater.inflate(R.layout.fragment_welcome, container, false)
     }
 
 
