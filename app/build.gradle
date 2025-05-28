@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.notify"
+    namespace = "com.example.gratitude"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.notify"
+        applicationId = "com.example.gratitude"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
