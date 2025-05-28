@@ -1,1 +1,1 @@
-## GRATITUDE- My Healing Journey🌼
+## GRATITUDE- My Healing Journey
