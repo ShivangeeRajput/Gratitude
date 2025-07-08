@@ -1,0 +1,43 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="32dp"
+        android:overScrollMode="never"/>
+
+    <LinearLayout
+        android:id="@+id/dotLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnGetStarted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Let’s Begin"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/theme_enable_btn_background"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/existingUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I am an Existing User!"
+        android:textColor="@color/black"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center"/>
+</LinearLayout>

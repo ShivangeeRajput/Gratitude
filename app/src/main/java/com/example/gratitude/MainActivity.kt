@@ -4,14 +4,16 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.gratitude.dashboard.onboarding.OnboardingFragment
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val fragment: Fragment = WelcomeFragment()
+        val fragment: Fragment = OnboardingFragment()
         addFragmentToActivity(supportFragmentManager, fragment, R.id.fragment_container_view)
     }
 

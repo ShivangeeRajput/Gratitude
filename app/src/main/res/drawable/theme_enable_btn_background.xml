@@ -5,7 +5,7 @@
     tools:ignore="ExtraText">
 
     <corners android:radius="20dp"/>
-    <solid android:color="@color/dark_pink"/>
+    <solid android:color="@color/purple_700"/>
 
     <padding
         android:bottom="5dp"
