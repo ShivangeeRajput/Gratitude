@@ -1,4 +1,4 @@
-package com.example.gratitude.dashboard
+package com.example.gratitude.ui.fragments.onboarding.steps
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,15 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.gratitude.R
 
+class OnboardingStepVisulaizeFragment : Fragment() {
 
-class DashboardFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_dashboard, container, false)
-    }
 
+        return inflater.inflate(R.layout.fragment_onboarding_step_visulaize, container, false)
+    }
 
 }

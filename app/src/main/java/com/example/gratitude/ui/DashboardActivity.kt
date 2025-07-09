@@ -1,4 +1,4 @@
-package com.example.gratitude.dashboard
+package com.example.gratitude.ui
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

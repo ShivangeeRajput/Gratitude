@@ -43,7 +43,6 @@ android {
 }
 
 dependencies {
-    // Base AndroidX libs
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat
     implementation libs.material
@@ -79,7 +78,7 @@ dependencies {
 
     // Glide
     implementation "com.github.bumptech.glide:glide:4.13.0"
-    kapt "com.github.bumptech.glide:compiler:4.13.0" // 🔁 FIXED from annotationProcessor to kapt
+    kapt "com.github.bumptech.glide:compiler:4.13.0"
 
     // Lottie
     implementation "com.airbnb.android:lottie:3.7.1"

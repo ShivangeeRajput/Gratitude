@@ -1,4 +1,4 @@
-package com.example.gratitude.dashboard.fragments
+package com.example.gratitude.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

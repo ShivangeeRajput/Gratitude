@@ -1,5 +1,6 @@
-package com.example.gratitude.dashboard.onboarding
+package com.example.gratitude.ui.fragments.welcomepage
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -12,23 +13,24 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.example.gratitude.R
-import com.example.gratitude.dashboard.onboarding.adapter.OnboardingPagerAdapter
-import com.example.gratitude.dashboard.onboarding.models.OnboardingPage
-import com.example.gratitude.databinding.FragmentOnboardingBinding
+import com.example.gratitude.ui.fragments.welcomepage.adapter.WelcomePagerAdapter
+import com.example.gratitude.ui.fragments.welcomepage.models.WelcomePage
+import com.example.gratitude.databinding.FragmentWelcomePageBinding
+import com.example.gratitude.ui.fragments.onboarding.OnboardingStepsActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class OnboardingFragment : Fragment() {
+class WelcomePageFragment : Fragment() {
 
-    private var _binding: FragmentOnboardingBinding? = null
+    private var _binding: FragmentWelcomePageBinding? = null
     private val binding get() = _binding!!
 
     private val pages = listOf(
-        OnboardingPage("Welcome to Gratitude!", "Your Self-Care Journey Begins Here", R.drawable.welcome_girl),
-        OnboardingPage("Track Daily Moments", "Capture the Joy in Your Everyday Life", R.drawable.free),
-        OnboardingPage("Reflect & Grow", "Turn Reflection Into a Path of Healing", R.drawable.happy),
-        OnboardingPage("Celebrate Progress", "Because Every Small Step Matters", R.drawable.meditate)
+        WelcomePage("Welcome to Gratitude!", "Feel more like yourself again:)", R.drawable.happy_happy),
+        WelcomePage("Track Daily Moments", "Capture the Joy in Your Everyday Life", R.drawable.gratitude_icon),
+        WelcomePage("Reflect & Grow", "Turn Reflection Into a Path of Healing", R.drawable.dreamlife),
+        WelcomePage("Celebrate Progress", "Because Every Small Step Matters", R.drawable.ic_meditate)
     )
 
 
@@ -39,12 +41,12 @@ class OnboardingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentOnboardingBinding.inflate(inflater, container, false)
+        _binding = FragmentWelcomePageBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val adapter = OnboardingPagerAdapter(pages)
+        val adapter = WelcomePagerAdapter(pages)
         binding.viewPager.adapter = adapter
         binding.viewPager.offscreenPageLimit = pages.size
 
@@ -67,7 +69,9 @@ class OnboardingFragment : Fragment() {
         autoScrollHandler.postDelayed(autoScrollRunnable, 3000)
 
         binding.btnGetStarted.setOnClickListener {
-            Toast.makeText(requireContext(), "Let's Begin Clicked", Toast.LENGTH_SHORT).show()
+           val intent= Intent(requireContext(), OnboardingStepsActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
         }
 
         binding.existingUser.setOnClickListener {

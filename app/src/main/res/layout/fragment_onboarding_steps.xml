@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:text="Onboarding"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/progressContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:weightSum="8"
+            android:clipChildren="false"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp">
+
+
+            <View
+                android:paddingStart="16dp"
+                android:id="@+id/progressStep1"
+                android:layout_width="80dp"
+                android:layout_height="6dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/onboarding_steps" />
+
+
+            <View
+                android:paddingStart="16dp"
+                android:id="@+id/progressStep2"
+                android:layout_width="80dp"
+                android:layout_height="6dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/onboarding_steps" />
+
+            <View
+                android:paddingStart="16dp"
+                android:id="@+id/progressStep3"
+                android:layout_width="80dp"
+                android:layout_height="6dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/onboarding_steps" />
+
+            <View
+                android:paddingStart="16dp"
+                android:id="@+id/progressStep4"
+                android:layout_width="80dp"
+                android:layout_height="6dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/onboarding_steps" />
+
+
+
+
+        </LinearLayout>
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/onboardingViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"/>
+
+
+
+</LinearLayout>

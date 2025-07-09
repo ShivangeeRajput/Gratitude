@@ -5,14 +5,15 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:padding="16dp"
-    android:background="@android:color/transparent">
+    android:background="@color/black"
+    >
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐆𝐫𝐚𝐭𝐢𝐭𝐮𝐝𝐞!"
-        android:textColor="?attr/colorOnBackground"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginBottom="4dp"/>
@@ -21,19 +22,16 @@
         android:id="@+id/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Self-Care Journey Begins Here "
-        android:textColor="?attr/colorOnBackground"
+        android:text="Feel more like yourself again:) "
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginBottom="4dp"/>
-
-
-
 
     <ImageView
         android:id="@+id/ivWelcomeImage"
         android:layout_width="wrap_content"
         android:layout_height="580dp"
         android:layout_gravity="center"
-        android:src="@drawable/welcome_girl" />
+        android:src="@drawable/happy_happy" />
 </LinearLayout>
