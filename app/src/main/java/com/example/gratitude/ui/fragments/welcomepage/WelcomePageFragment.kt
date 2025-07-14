@@ -27,10 +27,10 @@ class WelcomePageFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val pages = listOf(
-        WelcomePage("Welcome to Gratitude!", "Feel more like yourself again:)", R.drawable.happy_happy),
+        WelcomePage("Welcome to Gratitude!", "Feel more like yourself again:)", R.drawable.welcomepage),
         WelcomePage("Track Daily Moments", "Capture the Joy in Your Everyday Life", R.drawable.gratitude_icon),
         WelcomePage("Reflect & Grow", "Turn Reflection Into a Path of Healing", R.drawable.dreamlife),
-        WelcomePage("Celebrate Progress", "Because Every Small Step Matters", R.drawable.ic_meditate)
+        WelcomePage("Celebrate Progress", "Because Every Small Step Matters", R.drawable.healed)
     )
 
 

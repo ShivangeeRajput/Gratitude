@@ -11,7 +11,6 @@ import com.example.gratitude.databinding.FragmentOnboardingStepsBinding
 import com.example.gratitude.ui.fragments.onboarding.adapter.OnboardingStepsPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class OnboardingStepsFragment : Fragment() {
 
     private var _binding: FragmentOnboardingStepsBinding? = null
@@ -42,6 +41,13 @@ class OnboardingStepsFragment : Fragment() {
         })
     }
 
+    fun goToNextPage() {
+        val nextItem = binding.onboardingViewPager.currentItem + 1
+        if (nextItem < 4) {
+            binding.onboardingViewPager.currentItem = nextItem
+        }
+    }
+
     private fun updateProgress(position: Int) {
         val steps = listOf(
             binding.progressStep1,
@@ -62,3 +68,4 @@ class OnboardingStepsFragment : Fragment() {
         _binding = null
     }
 }
+
