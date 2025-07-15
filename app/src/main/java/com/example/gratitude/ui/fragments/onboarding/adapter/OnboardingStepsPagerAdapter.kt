@@ -6,7 +6,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.gratitude.ui.fragments.onboarding.steps.OnboardingStepGratitudeFragment
 import com.example.gratitude.ui.fragments.onboarding.steps.OnboardingStepJournalFragment
 import com.example.gratitude.ui.fragments.onboarding.steps.OnboardingStepUserInfoFragment
-import com.example.gratitude.ui.fragments.onboarding.steps.OnboardingStepVisulaizeFragment
+import com.example.gratitude.ui.fragments.onboarding.steps.OnboardingStepFocusAreaFragment
 
 
 class OnboardingStepsPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
@@ -17,7 +17,7 @@ class OnboardingStepsPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fra
             0 -> OnboardingStepUserInfoFragment()
             1 -> OnboardingStepJournalFragment()
             2 -> OnboardingStepGratitudeFragment()
-            3 -> OnboardingStepVisulaizeFragment()
+            3 -> OnboardingStepFocusAreaFragment()
             else -> throw IllegalArgumentException("Invalid position")
         }
     }

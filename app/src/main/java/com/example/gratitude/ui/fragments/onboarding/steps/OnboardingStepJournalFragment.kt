@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import com.example.gratitude.R
 import com.example.gratitude.databinding.FragmentOnboardingStepJournalBinding
+import com.example.gratitude.ui.fragments.onboarding.OnboardingStepsFragment
 import com.example.gratitude.ui.viewmodels.OnboardingSharedViewModel
 import com.google.android.material.card.MaterialCardView
 
@@ -30,7 +31,6 @@ class OnboardingStepJournalFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         sharedViewModel.userName.observe(viewLifecycleOwner) { name ->
             binding.tvQuestion.text = "Hey $name! What’s your current journaling habit?"
         }
@@ -41,19 +41,20 @@ class OnboardingStepJournalFragment : Fragment() {
             val card = container.getChildAt(i) as? MaterialCardView ?: continue
 
             card.setOnClickListener {
-                // Reset previous selection
                 selectedCard?.apply {
-                    setCardBackgroundColor(ContextCompat.getColor(context, R.color.blue_grey_light))
-                    strokeColor = ContextCompat.getColor(context, R.color.white)
-                    (getChildAt(0) as? TextView)?.setTextColor(ContextCompat.getColor(context, R.color.black))
+                    strokeColor = ContextCompat.getColor(requireContext(), R.color.white)
+                    strokeWidth = 1
                 }
 
-                // Set new selection
-                card.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.dark_pink))
                 card.strokeColor = ContextCompat.getColor(requireContext(), R.color.dark_pink)
-                (card.getChildAt(0) as? TextView)?.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
-
+                card.strokeWidth = 3
                 selectedCard = card
+
+                val selectedTextView = card.getChildAt(0) as? TextView
+                val answer = selectedTextView?.text.toString()
+                sharedViewModel.setJournalingHabit(answer)
+
+                (requireParentFragment() as? OnboardingStepsFragment)?.goToNextPage()
             }
         }
     }
@@ -63,5 +64,9 @@ class OnboardingStepJournalFragment : Fragment() {
         _binding = null
     }
 }
+
+
+
+
 
 

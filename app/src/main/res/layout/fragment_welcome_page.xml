@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:text="Let’s Begin"
         android:layout_marginTop="24dp"
-        android:background="@drawable/theme_enable_btn_background"
+        android:background="@drawable/primary_theme_enable_btn_background"
         android:textColor="@android:color/white"/>
 
     <TextView

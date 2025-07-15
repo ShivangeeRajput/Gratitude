@@ -12,7 +12,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/ivTulips"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +22,7 @@
             android:id="@+id/tvAskName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="𝐇𝐞𝐲, 𝐭𝐡𝐞𝐫𝐞!"
+            android:text="Lets pick your focus areas"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
@@ -32,32 +31,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="𝐖𝐡𝐚𝐭 𝐬𝐡𝐨𝐮𝐥𝐝 𝐰𝐞 𝐜𝐚𝐥𝐥 𝐲𝐨𝐮?"
+            android:text="Select at least 2 options to help us personalize your Home Screen"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="12sp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFocusAreas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/white">
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:clipToPadding="false" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_outlined_box"
-                android:textColor="@color/white"
-                android:inputType="textCapWords"
-                android:imeOptions="actionDone" />
-
-        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnContinue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="400dp"
             android:text="Continue"
             android:background="@drawable/primary_theme_disabled_btn_background"
             android:textColor="@color/white"/>
@@ -65,16 +55,6 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/ivTulips"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:src="@drawable/tulips"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 
 

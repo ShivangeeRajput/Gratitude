@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.example.gratitude.R
 import com.example.gratitude.databinding.FragmentOnboardingStepUserInfoBinding
 import com.example.gratitude.ui.fragments.onboarding.OnboardingStepsFragment
 import com.example.gratitude.ui.viewmodels.OnboardingSharedViewModel
@@ -29,17 +30,41 @@ class OnboardingStepUserInfoFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.btnContinue.isEnabled = false
+        binding.etName.addTextChangedListener(object : android.text.TextWatcher {
+            override fun afterTextChanged(s: android.text.Editable?) {
+                val name = s?.toString()?.trim()
+                binding.btnContinue.isEnabled = !name.isNullOrEmpty()
 
-        binding.etName.setOnEditorActionListener { v, actionId, event ->
-            val name = binding.etName.text?.toString()?.trim()
-            if (!name.isNullOrEmpty() && !hasNavigated) {
-                hasNavigated = true
-                sharedViewModel.setUserName(name)
-                (requireParentFragment() as? OnboardingStepsFragment)?.goToNextPage()
-                true
-            } else {
-                false
+                if (!name.isNullOrEmpty()) {
+                    binding.btnContinue.setBackgroundResource(R.drawable.primary_theme_enable_btn_background)
+                } else {
+                    binding.btnContinue.setBackgroundResource(R.drawable.primary_theme_disabled_btn_background)
+                }
             }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
+
+        binding.etName.setOnEditorActionListener { _, _, _ ->
+            tryProceed()
+        }
+
+        binding.btnContinue.setOnClickListener {
+            tryProceed()
+        }
+    }
+
+    private fun tryProceed(): Boolean {
+        val name = binding.etName.text?.toString()?.trim()
+        return if (!name.isNullOrEmpty() && !hasNavigated) {
+            hasNavigated = true
+            sharedViewModel.setUserName(name)
+            (requireParentFragment() as? OnboardingStepsFragment)?.goToNextPage()
+            true
+        } else {
+            false
         }
     }
 
@@ -48,5 +73,6 @@ class OnboardingStepUserInfoFragment : Fragment() {
         _binding = null
     }
 }
+
 
 
