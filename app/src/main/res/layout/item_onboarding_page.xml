@@ -1,37 +1,53 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:lottie="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:padding="16dp"
-    android:background="@color/black"
-    >
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/black">
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐆𝐫𝐚𝐭𝐢𝐭𝐮𝐝𝐞!"
+        android:text="Welcome to Gratitude!"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="4dp"/>
+        android:fontFamily="@font/poppins_medium"
+        android:layout_gravity="start"
+        android:layout_marginTop="8dp" />
 
     <TextView
         android:id="@+id/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Feel more like yourself again:) "
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="4dp"/>
+        android:text="Feel more like yourself again :)"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="start" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/ivWelcomeImage"
-        android:layout_width="wrap_content"
-        android:layout_height="580dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_gravity="center"
-        android:src="@drawable/happy_happy" />
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:visibility="visible" />
+
 </LinearLayout>

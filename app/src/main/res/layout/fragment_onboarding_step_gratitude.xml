@@ -10,6 +10,7 @@
         android:id="@+id/tvQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
         android:text="How often do you pause to feel gratefull?"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -42,9 +43,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="🐣 I am just getting started"
                     android:textSize="16sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -62,9 +64,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="📖 I do it sometimes, but not regularly"
                     android:textSize="16sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -82,9 +85,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="📝 Its already a part of my daily routine"
                     android:textSize="16sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
             </com.google.android.material.card.MaterialCardView>
 
 

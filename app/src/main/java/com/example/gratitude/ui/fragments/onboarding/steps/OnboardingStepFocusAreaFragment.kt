@@ -5,29 +5,36 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import com.example.gratitude.R
 import com.example.gratitude.databinding.FragmentOnboardingStepFocusAreaBinding
+import com.example.gratitude.ui.fragments.onboarding.OnboardingStepsFragment
 import com.example.gratitude.ui.fragments.onboarding.adapter.OnboardingStepFocusAreaAdapter
 import com.example.gratitude.ui.fragments.onboarding.steps.models.FocusArea
+import com.example.gratitude.ui.viewmodels.OnboardingSharedViewModel
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
+
 
 class OnboardingStepFocusAreaFragment : Fragment() {
 
     private lateinit var binding: FragmentOnboardingStepFocusAreaBinding
     private lateinit var focusAreaAdapter: OnboardingStepFocusAreaAdapter
+
+    private val viewModel: OnboardingSharedViewModel by activityViewModels()
+
     private val focusAreas = listOf(
-        FocusArea("Self Love", R.drawable.self_love),
-        FocusArea("Health", R.drawable.gratitude_icon),
-        FocusArea("Little Things", R.drawable.tulips),
-        FocusArea("Sleep", R.drawable.self_love),
-        FocusArea("Productivity", R.drawable.welcome_girl),
-        FocusArea("Mindfulness", R.drawable.dreamlife),
-        FocusArea("Happiness", R.drawable.happy),
-        FocusArea("Fitness", R.drawable.ic_meditate),
-        FocusArea("Peace", R.drawable.partner),
-        FocusArea("Confidence", R.drawable.tulips)
+        FocusArea("Self Love", R.drawable.self_lovee),
+        FocusArea("Health", R.drawable.health),
+        FocusArea("Little Things", R.drawable.lil_things),
+        FocusArea("Sleep", R.drawable.sleep),
+        FocusArea("Productivity", R.drawable.productivity),
+        FocusArea("Mindfulness", R.drawable.mindfullness),
+        FocusArea("Happiness", R.drawable.happiness),
+        FocusArea("Fitness", R.drawable.fitness),
+        FocusArea("Peace", R.drawable.love),
+        FocusArea("Confidence", R.drawable.confidence)
     )
 
     override fun onCreateView(
@@ -45,14 +52,13 @@ class OnboardingStepFocusAreaFragment : Fragment() {
 
     private fun setupRecyclerView() {
         focusAreaAdapter = OnboardingStepFocusAreaAdapter(focusAreas) { selectedList ->
-            // Enable button when 2 or more selected
             binding.btnContinue.isEnabled = selectedList.size >= 2
         }
 
         binding.rvFocusAreas.apply {
             layoutManager = FlexboxLayoutManager(requireContext()).apply {
                 flexWrap = FlexWrap.WRAP
-                justifyContent = JustifyContent.FLEX_START
+                justifyContent = JustifyContent.CENTER
             }
             adapter = focusAreaAdapter
         }
@@ -60,9 +66,14 @@ class OnboardingStepFocusAreaFragment : Fragment() {
 
     private fun setupContinueButton() {
         binding.btnContinue.isEnabled = false
+
         binding.btnContinue.setOnClickListener {
             val selectedItems = focusAreaAdapter.getSelectedItems()
+            val selectedTitles = selectedItems.map { it.title }
 
+            viewModel.setFocusAreas(selectedTitles)
+            (requireParentFragment() as? OnboardingStepsFragment)?.goToNextPage()
         }
     }
 }
+

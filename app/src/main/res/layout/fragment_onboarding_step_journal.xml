@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hey! What’s your current journaling habit?"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -42,9 +43,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="🐣 I am new to journaling"
                     android:textSize="16sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -62,9 +64,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="📖 Occasionally, but want to be regular"
                     android:textSize="16sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -82,9 +85,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="📝 I journal quite regularly"
                     android:textSize="16sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -102,9 +106,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="🖊️ I journal using pen and paper"
                     android:textSize="16sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -122,9 +127,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="📒 I use another journal app"
                     android:textSize="16sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>

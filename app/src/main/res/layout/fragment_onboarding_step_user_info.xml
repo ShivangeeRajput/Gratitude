@@ -1,7 +1,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
@@ -12,19 +11,17 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/ivTulips"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
             android:id="@+id/tvAskName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="𝐇𝐞𝐲, 𝐭𝐡𝐞𝐫𝐞!"
+            android:text="Hey,there!"
             android:textColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
             android:textSize="18sp" />
 
         <TextView
@@ -32,7 +29,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="𝐖𝐡𝐚𝐭 𝐬𝐡𝐨𝐮𝐥𝐝 𝐰𝐞 𝐜𝐚𝐥𝐥 𝐲𝐨𝐮?"
+            android:text="What should we call you?"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
@@ -50,32 +48,29 @@
                 android:textColor="@color/white"
                 android:inputType="textCapWords"
                 android:imeOptions="actionDone" />
-
         </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/btnContinue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="400dp"
-            android:text="Continue"
-            android:background="@drawable/primary_theme_disabled_btn_background"
-            android:textColor="@color/white"/>
-
-
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/ivTulips"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:src="@drawable/tulips"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/formContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lottieView"
+        android:layout_marginTop="24dp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:lottie_rawRes="@raw/happy"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

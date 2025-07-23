@@ -30,9 +30,6 @@ class OnboardingStepsFragment : Fragment() {
         adapter = OnboardingStepsPagerAdapter(this)
         binding.onboardingViewPager.adapter = adapter
 
-        binding.imgBack.setOnClickListener {
-            requireActivity().onBackPressedDispatcher.onBackPressed()
-        }
 
         binding.onboardingViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
@@ -43,7 +40,7 @@ class OnboardingStepsFragment : Fragment() {
 
     fun goToNextPage() {
         val nextItem = binding.onboardingViewPager.currentItem + 1
-        if (nextItem < 4) {
+        if (nextItem < 6) {
             binding.onboardingViewPager.currentItem = nextItem
         }
     }
@@ -53,7 +50,8 @@ class OnboardingStepsFragment : Fragment() {
             binding.progressStep1,
             binding.progressStep2,
             binding.progressStep3,
-            binding.progressStep4
+            binding.progressStep4,
+            binding.progressStep5
         )
         steps.forEachIndexed { index, view ->
             view.setBackgroundResource(

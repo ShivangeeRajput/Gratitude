@@ -3,9 +3,11 @@ package com.example.gratitude.ui.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-
-class OnboardingSharedViewModel : ViewModel() {
+@HiltViewModel
+class OnboardingSharedViewModel @Inject constructor() : ViewModel() {
     private val _userName = MutableLiveData<String>()
     val userName: LiveData<String> get() = _userName
 
@@ -14,6 +16,9 @@ class OnboardingSharedViewModel : ViewModel() {
 
     private val _gratitudeFrequency = MutableLiveData<String>()
     val gratitudeFrequency: LiveData<String> get() = _gratitudeFrequency
+
+    private val _focusAreas = MutableLiveData<List<String>>()
+    val focusAreas: LiveData<List<String>> = _focusAreas
 
     fun setUserName(name: String) {
         _userName.value = name
@@ -25,5 +30,9 @@ class OnboardingSharedViewModel : ViewModel() {
 
     fun setGratitudeFrequency(frequency: String) {
         _gratitudeFrequency.value = frequency
+    }
+
+    fun setFocusAreas(selected: List<String>) {
+        _focusAreas.value = selected
     }
 }

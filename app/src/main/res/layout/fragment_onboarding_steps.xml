@@ -14,12 +14,6 @@
         android:orientation="horizontal"
         android:gravity="center_vertical">
 
-        <ImageButton
-            android:id="@+id/imgBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:src="@drawable/ic_back" />
 
         <TextView
             android:id="@+id/tvTitle"
@@ -46,9 +40,9 @@
 
 
             <View
-                android:paddingStart="16dp"
+                android:paddingStart="12dp"
                 android:id="@+id/progressStep1"
-                android:layout_width="80dp"
+                android:layout_width="74dp"
                 android:layout_height="6dp"
                 android:layout_marginEnd="4dp"
                 android:background="@drawable/onboarding_steps" />
@@ -57,7 +51,7 @@
             <View
                 android:paddingStart="16dp"
                 android:id="@+id/progressStep2"
-                android:layout_width="80dp"
+                android:layout_width="74dp"
                 android:layout_height="6dp"
                 android:layout_marginEnd="4dp"
                 android:background="@drawable/onboarding_steps" />
@@ -65,7 +59,7 @@
             <View
                 android:paddingStart="16dp"
                 android:id="@+id/progressStep3"
-                android:layout_width="80dp"
+                android:layout_width="74dp"
                 android:layout_height="6dp"
                 android:layout_marginEnd="4dp"
                 android:background="@drawable/onboarding_steps" />
@@ -73,11 +67,18 @@
             <View
                 android:paddingStart="16dp"
                 android:id="@+id/progressStep4"
-                android:layout_width="80dp"
+                android:layout_width="74dp"
                 android:layout_height="6dp"
                 android:layout_marginEnd="4dp"
                 android:background="@drawable/onboarding_steps" />
 
+            <View
+                android:paddingStart="16dp"
+                android:id="@+id/progressStep5"
+                android:layout_width="74dp"
+                android:layout_height="6dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/onboarding_steps" />
 
 
 

@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Gratitude</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="onboarding_mindset">📘 Build a Grateful Mindset</string>
+    <string name="onboarding_selftalk">🧡 Develop Positive Self-Talk</string>
+    <string name="onboarding_goals">💎 Visualize Your Goals</string>
+    <string name="onboarding_inspired">🍃 Stay Inspired</string>
+
 </resources>

@@ -30,6 +30,7 @@
         android:layout_height="wrap_content"
         android:text="Let’s Begin"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_regular"
         android:background="@drawable/primary_theme_enable_btn_background"
         android:textColor="@android:color/white"/>
 
@@ -39,6 +40,7 @@
         android:layout_height="wrap_content"
         android:text="I am an Existing User!"
         android:textColor="@color/white"
+        android:fontFamily="@font/poppins_regular"
         android:layout_marginTop="12dp"
         android:layout_gravity="center"/>
 </LinearLayout>

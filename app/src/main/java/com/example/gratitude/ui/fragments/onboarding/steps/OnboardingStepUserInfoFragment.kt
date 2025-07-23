@@ -31,6 +31,14 @@ class OnboardingStepUserInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnContinue.isEnabled = false
+        binding.btnContinue.setBackgroundResource(R.drawable.primary_theme_disabled_btn_background)
+        binding.lottieView.apply {
+            setAnimation(R.raw.happy)
+            visibility = View.VISIBLE
+            playAnimation()
+            loop(true)
+        }
+
         binding.etName.addTextChangedListener(object : android.text.TextWatcher {
             override fun afterTextChanged(s: android.text.Editable?) {
                 val name = s?.toString()?.trim()

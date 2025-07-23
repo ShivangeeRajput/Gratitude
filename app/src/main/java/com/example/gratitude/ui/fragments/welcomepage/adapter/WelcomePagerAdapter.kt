@@ -1,8 +1,10 @@
 package com.example.gratitude.ui.fragments.welcomepage.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieDrawable
 import com.example.gratitude.ui.fragments.welcomepage.models.WelcomePage
 import com.example.gratitude.databinding.ItemOnboardingPageBinding
 
@@ -16,8 +18,21 @@ class WelcomePagerAdapter(
 
         fun bind(page: WelcomePage) {
             binding.tvTitle.text = page.title
-            binding.ivWelcomeImage.setImageResource(page.imageRes)
+            binding.subtitle.text = page.subtitle
+
+            if (page.lottieFile != null) {
+                binding.lottieView.visibility = View.VISIBLE
+                binding.ivWelcomeImage.visibility = View.GONE
+                binding.lottieView.setAnimation(page.lottieFile)
+                binding.lottieView.playAnimation()
+            } else if (page.imageRes != null) {
+                binding.lottieView.visibility = View.GONE
+                binding.ivWelcomeImage.visibility = View.VISIBLE
+                binding.ivWelcomeImage.setImageResource(page.imageRes)
+            }
         }
+
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnboardingViewHolder {
@@ -33,3 +48,4 @@ class WelcomePagerAdapter(
 
     override fun getItemCount(): Int = pages.size
 }
+

@@ -7,10 +7,11 @@ import com.example.gratitude.ui.fragments.onboarding.steps.OnboardingStepGratitu
 import com.example.gratitude.ui.fragments.onboarding.steps.OnboardingStepJournalFragment
 import com.example.gratitude.ui.fragments.onboarding.steps.OnboardingStepUserInfoFragment
 import com.example.gratitude.ui.fragments.onboarding.steps.OnboardingStepFocusAreaFragment
+import com.example.gratitude.ui.fragments.onboarding.steps.OnboardingStepSummaryFragment
 
 
 class OnboardingStepsPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
-    override fun getItemCount(): Int = 4
+    override fun getItemCount(): Int = 5
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
@@ -18,6 +19,7 @@ class OnboardingStepsPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fra
             1 -> OnboardingStepJournalFragment()
             2 -> OnboardingStepGratitudeFragment()
             3 -> OnboardingStepFocusAreaFragment()
+            4 -> OnboardingStepSummaryFragment()
             else -> throw IllegalArgumentException("Invalid position")
         }
     }

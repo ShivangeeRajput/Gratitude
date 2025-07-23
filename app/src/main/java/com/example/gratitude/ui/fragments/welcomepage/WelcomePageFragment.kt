@@ -27,11 +27,13 @@ class WelcomePageFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val pages = listOf(
-        WelcomePage("Welcome to Gratitude!", "Feel more like yourself again:)", R.drawable.welcomepage),
-        WelcomePage("Track Daily Moments", "Capture the Joy in Your Everyday Life", R.drawable.gratitude_icon),
-        WelcomePage("Reflect & Grow", "Turn Reflection Into a Path of Healing", R.drawable.dreamlife),
-        WelcomePage("Celebrate Progress", "Because Every Small Step Matters", R.drawable.healed)
+        WelcomePage("Welcome to Gratitude!", "Feel more like yourself again :)", lottieFile = R.raw.first_page_girl),
+        WelcomePage("Track Daily Moments", "Capture the Joy in Your Everyday Life", imageRes = R.drawable.gratitude_icon),
+        WelcomePage("Reflect & Grow", "Turn Reflection Into a Path of Healing", imageRes = R.drawable.dreamlife),
+        WelcomePage("Celebrate Progress", "Because Every Small Step Matters", imageRes = R.drawable.healed)
     )
+
+
 
 
     private val autoScrollHandler = Handler(Looper.getMainLooper())
@@ -61,12 +63,15 @@ class WelcomePageFragment : Fragment() {
 
         autoScrollRunnable = object : Runnable {
             override fun run() {
-                val nextItem = (binding.viewPager.currentItem + 1) % pages.size
+                val currentItem = binding.viewPager.currentItem
+                val nextItem = (currentItem + 1) % pages.size
                 binding.viewPager.setCurrentItem(nextItem, true)
-                autoScrollHandler.postDelayed(this, 3000)
+                val delay = if (currentItem == 0) 6000L else 3000L
+                autoScrollHandler.postDelayed(this, delay)
             }
         }
-        autoScrollHandler.postDelayed(autoScrollRunnable, 3000)
+        autoScrollHandler.postDelayed(autoScrollRunnable, 6000) // 👈 first delay bhi 6 sec
+
 
         binding.btnGetStarted.setOnClickListener {
            val intent= Intent(requireContext(), OnboardingStepsActivity::class.java)

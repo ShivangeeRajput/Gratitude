@@ -15,7 +15,7 @@ class OnboardingStepFocusAreaAdapter(
     private val onSelectionChanged: (List<FocusArea>) -> Unit
 ) : RecyclerView.Adapter<OnboardingStepFocusAreaAdapter.FocusAreaViewHolder>() {
 
-    private val selectedPositions = mutableSetOf<Int>()
+    private val selectedItems = mutableSetOf<Int>()
 
     inner class FocusAreaViewHolder(val binding: RvCardviewItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -24,19 +24,20 @@ class OnboardingStepFocusAreaAdapter(
             binding.tvTitle.text = item.title
             binding.ivBackground.setImageResource(item.imageRes)
 
-            val isSelected = selectedPositions.contains(position)
-            binding.cardRoot.strokeWidth = if (isSelected) 6 else 0
+            val isSelected = selectedItems.contains(position)
+
+            binding.cardRoot.strokeWidth = if (isSelected) 4 else 1
             binding.cardRoot.strokeColor = if (isSelected)
                 ContextCompat.getColor(binding.root.context, R.color.dark_pink)
             else
                 Color.TRANSPARENT
 
             binding.root.setOnClickListener {
-                if (isSelected) selectedPositions.remove(position)
-                else selectedPositions.add(position)
+                if (isSelected) selectedItems.remove(position)
+                else selectedItems.add(position)
 
                 notifyItemChanged(position)
-                onSelectionChanged(selectedPositions.map { items[it] })
+                onSelectionChanged(selectedItems.map { items[it] })
             }
         }
     }
@@ -52,6 +53,9 @@ class OnboardingStepFocusAreaAdapter(
 
     override fun getItemCount(): Int = items.size
 
-    fun getSelectedItems(): List<FocusArea> = selectedPositions.map { items[it] }
+    fun getSelectedItems(): List<FocusArea> = selectedItems.map { items[it] }
 }
+
+
+
 
