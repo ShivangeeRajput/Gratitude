@@ -37,6 +37,9 @@ class OnboardingStepJournalFragment : Fragment() {
 
         val container = binding.optionContainer
 
+        binding.btnContinue.isEnabled = false
+        binding.btnContinue.background = ContextCompat.getDrawable(requireContext(), R.drawable.primary_theme_disabled_btn_background)
+
         for (i in 0 until container.childCount) {
             val card = container.getChildAt(i) as? MaterialCardView ?: continue
 
@@ -54,8 +57,14 @@ class OnboardingStepJournalFragment : Fragment() {
                 val answer = selectedTextView?.text.toString()
                 sharedViewModel.setJournalingHabit(answer)
 
-                (requireParentFragment() as? OnboardingStepsFragment)?.goToNextPage()
+                binding.btnContinue.isEnabled = true
+                binding.btnContinue.background = ContextCompat.getDrawable(requireContext(), R.drawable.primary_theme_enable_btn_background
+                )
             }
+        }
+
+        binding.btnContinue.setOnClickListener {
+            (requireParentFragment() as? OnboardingStepsFragment)?.goToNextPage()
         }
     }
 
@@ -64,6 +73,8 @@ class OnboardingStepJournalFragment : Fragment() {
         _binding = null
     }
 }
+
+
 
 
 

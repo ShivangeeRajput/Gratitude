@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_medium"
-        android:text="How often do you pause to feel gratefull?"
+        android:text="How often do you pause to feel grateful?"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -95,5 +95,16 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/primary_theme_disabled_btn_background"
+        android:text="Continue"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/formContainer" />
 
 </LinearLayout>

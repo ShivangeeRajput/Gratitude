@@ -34,6 +34,10 @@ class OnboardingStepGratitudeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val container = binding.optionContainer
 
+        // Disable the button initially
+        binding.btnContinue.isEnabled = false
+        binding.btnContinue.background = ContextCompat.getDrawable(requireContext(), R.drawable.primary_theme_disabled_btn_background)
+
         for (i in 0 until container.childCount) {
             val card = container.getChildAt(i) as? MaterialCardView ?: continue
 
@@ -51,8 +55,14 @@ class OnboardingStepGratitudeFragment : Fragment() {
                 val answer = selectedTextView?.text.toString()
                 sharedViewModel.setGratitudeFrequency(answer)
 
-                (requireParentFragment() as? OnboardingStepsFragment)?.goToNextPage()
+                // Enable continue button
+                binding.btnContinue.isEnabled = true
+                binding.btnContinue.background = ContextCompat.getDrawable(requireContext(), R.drawable.primary_theme_enable_btn_background)
             }
+        }
+
+        binding.btnContinue.setOnClickListener {
+            (requireParentFragment() as? OnboardingStepsFragment)?.goToNextPage()
         }
     }
 
@@ -61,4 +71,5 @@ class OnboardingStepGratitudeFragment : Fragment() {
         _binding = null
     }
 }
+
 

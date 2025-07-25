@@ -11,8 +11,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.gratitude.ui.viewmodels.OnboardingSharedViewModel
+import com.example.gratitude.ui.theme.GratitudeTheme
+import com.example.gratitude.ui.viewmodels.FakeOnboardingSharedViewModel
 
 @Composable
 fun HomeScreen(sharedViewModel: OnboardingSharedViewModel) {
@@ -21,21 +24,31 @@ fun HomeScreen(sharedViewModel: OnboardingSharedViewModel) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFFAF3F3))
+            .background(Color.Black)
             .padding(16.dp)
     ) {
         Text(
             text = "Welcome back, ${userName.ifEmpty { "Friend" }} 👋",
             style = MaterialTheme.typography.h5,
-            color = Color.Black,
+            color = Color.White,
             modifier = Modifier.padding(bottom = 8.dp)
         )
 
         Text(
             text = "Here’s your daily dose of gratitude 💖",
-            style = MaterialTheme.typography.body1
+            style = MaterialTheme.typography.body1,
+            color = Color.White
         )
     }
 }
 
+@Preview(showBackground = true)
+@Composable
+fun HomeScreenPreview() {
+    val fakeViewModel = FakeOnboardingSharedViewModel()
+
+    GratitudeTheme {
+        HomeScreen(sharedViewModel = fakeViewModel)
+    }
+}
 

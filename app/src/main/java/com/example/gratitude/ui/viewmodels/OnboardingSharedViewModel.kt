@@ -7,9 +7,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class OnboardingSharedViewModel @Inject constructor() : ViewModel() {
+open class OnboardingSharedViewModel @Inject constructor() : ViewModel() {
     private val _userName = MutableLiveData<String>()
-    val userName: LiveData<String> get() = _userName
+    open val userName: LiveData<String> get() = _userName
 
     private val _journalingHabit = MutableLiveData<String>()
     val journalingHabit: LiveData<String> get() = _journalingHabit
