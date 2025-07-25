@@ -9,7 +9,20 @@
 - **Daily Quotes** - A collection of inspiring quotes to start your day positively.
 - **Animated & Engaging UI** - Delightful Lottie animations and confetti effects make the app fun to use.
 
-## Screenshots  - 
+## Screenshots  
+<p>
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/f9c12d49-22c9-46af-8231-9550fdb72893.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/27285cfd-2ca2-4e62-b7cf-a727be359844.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/1bcf0bb8-9238-45ae-9215-f56c3c6b2169.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/5e6c9978-67bc-4090-a7b5-dc90729ab208.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/7ccc010f-77eb-4873-8ff2-92ad0c00caf8.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/46c8460f-2d25-47d2-9a86-b9d15762e9f7.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/43d84dc1-e768-42ee-99e4-524ea12aad8b.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/dfe76bc5-3981-45c5-bead-81ebc2ec183a.jpg" height="500">
+
+
+
+</p>
 
 ## Building With 🛠
   
