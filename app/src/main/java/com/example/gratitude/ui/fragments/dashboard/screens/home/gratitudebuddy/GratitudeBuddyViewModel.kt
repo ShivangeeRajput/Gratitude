@@ -14,18 +14,20 @@ class GratitudeBuddyViewModel @Inject constructor(
     private val assistantRepository: GratitudeBuddyRepository
 ) : ViewModel() {
 
-    private val _reply = MutableLiveData<String>()
-    val reply: LiveData<String> get() = _reply
+    private val _reply = MutableLiveData<String?>()
+    val reply: LiveData<String?> get() = _reply
 
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> get() = _loading
 
-    private val _error = MutableLiveData<String>()
-    val error: LiveData<String> get() = _error
+    private val _error = MutableLiveData<String?>()
+    val error: LiveData<String?> get() = _error
 
     fun sendMessage(userMessage: String) {
         viewModelScope.launch {
             _loading.value = true
+            _reply.value = null
+
             assistantRepository.getSelfCareReply(userMessage)
                 .onSuccess { response ->
                     _reply.value = response
@@ -33,7 +35,9 @@ class GratitudeBuddyViewModel @Inject constructor(
                 .onFailure { e ->
                     _error.value = e.message
                 }
+
             _loading.value = false
         }
     }
 }
+

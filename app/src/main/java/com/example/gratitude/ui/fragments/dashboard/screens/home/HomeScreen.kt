@@ -17,10 +17,12 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.gratitude.R
 import com.example.gratitude.ui.theme.GratitudeTheme
 import com.example.gratitude.ui.viewmodels.FakeOnboardingSharedViewModel
 import com.example.gratitude.ui.viewmodels.OnboardingSharedViewModel
@@ -45,10 +47,13 @@ fun HomeScreen(
                 backgroundColor = MaterialTheme.colors.primary
             ) {
                 Icon(
-                    imageVector = Icons.Default.Chat,
+                    painter = painterResource(id = R.drawable.assiatant),
                     contentDescription = "Gratitude Buddy",
-                    tint = Color.White
+                    tint = Color.White,
+                    modifier = Modifier.size(20.dp) 
                 )
+
+
             }
         },
         backgroundColor = Color.Black

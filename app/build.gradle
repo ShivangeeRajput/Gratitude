@@ -102,4 +102,12 @@ dependencies {
 
     implementation "androidx.hilt:hilt-navigation-compose:1.1.0"
 
+    // Room components
+    implementation "androidx.room:room-runtime:2.6.1"
+    kapt "androidx.room:room-compiler:2.6.1" // For Java/Kotlin annotation processing
+
+    // Kotlin Extensions and Coroutines support
+    implementation "androidx.room:room-ktx:2.6.1"
+
+
 }

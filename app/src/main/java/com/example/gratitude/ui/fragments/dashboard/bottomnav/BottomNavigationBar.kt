@@ -21,7 +21,7 @@ fun BottomNavigationBar(navController: NavHostController) {
         BottomNavItem.Home,
         BottomNavItem.Journal,
         BottomNavItem.Quotes,
-        BottomNavItem.Profile
+        BottomNavItem.Affirmations
     )
 
     val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route

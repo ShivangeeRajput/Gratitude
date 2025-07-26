@@ -5,41 +5,51 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.material.Text
+import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.gratitude.ui.fragments.dashboard.screens.home.HomeViewModel
-import com.example.gratitude.ui.fragments.dashboard.screens.home.ShimmerQuoteCard
+import com.example.gratitude.ui.fragments.dashboard.screens.home.QuoteCard
 
 @Composable
 fun QuotesScreen(
-    quoteViewModel: HomeViewModel = hiltViewModel() // Reuse if you're storing all quotes
+    quoteViewModel: HomeViewModel = hiltViewModel()
 ) {
     val quotes = quoteViewModel.allQuotes.observeAsState(emptyList())
 
     LaunchedEffect(Unit) {
-        quoteViewModel.fetchAllQuotes() // New method: loads full list
+        quoteViewModel.fetchAllQuotes()
     }
 
-    Box(
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Black)
             .padding(16.dp)
     ) {
+
+        Text(
+            text = "✨ Words to light up your soul",
+            color = Color.White,
+            fontSize = 22.sp,
+            fontWeight = FontWeight.SemiBold,
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 16.dp)
+        )
+
         if (quotes.value.isEmpty()) {
-            // Shimmer / Loading
             Column {
                 repeat(6) {
                     ShimmerQuoteCard(modifier = Modifier.padding(vertical = 8.dp))
@@ -47,7 +57,8 @@ fun QuotesScreen(
             }
         } else {
             LazyColumn(
-                verticalArrangement = Arrangement.spacedBy(16.dp)
+                verticalArrangement = Arrangement.spacedBy(16.dp),
+                modifier = Modifier.fillMaxSize()
             ) {
                 itemsIndexed(quotes.value.shuffled()) { index, quote ->
                     AnimatedVisibility(
