@@ -20,7 +20,7 @@ interface APINetworkOperations {
     @GET("/getDailyQuotes")
     suspend fun getDailyQuote(): Response<DailyQuotesResponse>
 
-    @GET("affirmations")
+    @GET("/getAffirmations")
     suspend fun getAffirmations(): Response<AffirmationsResponse>
 
 

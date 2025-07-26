@@ -1,5 +1,6 @@
 package com.example.gratitude.ui.fragments.dashboard.screens.affirmations
 
+import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -22,7 +23,12 @@ class AffirmationViewModel @Inject constructor(
     fun fetchAffirmations() {
         viewModelScope.launch {
             repository.getAllAffirmations()
-                .onSuccess { _affirmations.clear(); _affirmations.addAll(it) }
+                .onSuccess {
+                    _affirmations.clear();
+                    _affirmations.addAll(it)
+                    println("✅ Affirmations fetched: ${it.size}")
+                    Log.d("AffirmationViewModel", "Affirmations fetched: ${it.size}")
+                }
                 .onFailure { /* Handle error */ }
         }
     }
