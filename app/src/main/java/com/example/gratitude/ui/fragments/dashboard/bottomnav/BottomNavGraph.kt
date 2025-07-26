@@ -7,7 +7,7 @@ import androidx.navigation.compose.composable
 import com.example.gratitude.ui.fragments.dashboard.screens.home.HomeScreen
 import com.example.gratitude.ui.fragments.dashboard.screens.JournalScreen
 import com.example.gratitude.ui.fragments.dashboard.screens.ProfileScreen
-import com.example.gratitude.ui.fragments.dashboard.screens.QuotesScreen
+import com.example.gratitude.ui.fragments.dashboard.screens.quote.QuotesScreen
 import com.example.gratitude.ui.viewmodels.OnboardingSharedViewModel
 
 

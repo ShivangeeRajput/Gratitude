@@ -17,6 +17,9 @@ class HomeViewModel @Inject constructor(
     private val _quote = MutableLiveData<DailyQuote>()
     val quote: LiveData<DailyQuote> get() = _quote
 
+    private val _allQuotes = MutableLiveData<List<DailyQuote>>()
+    val allQuotes: LiveData<List<DailyQuote>> = _allQuotes
+
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> get() = _loading
 
@@ -36,4 +39,17 @@ class HomeViewModel @Inject constructor(
             _loading.value = false
         }
     }
+
+    fun fetchAllQuotes() {
+        viewModelScope.launch {
+            quoteRepository.getAllQuotes()
+                .onSuccess { quotes ->
+                    _allQuotes.value = quotes
+                }
+                .onFailure { e ->
+                    _error.value = e.message
+                }
+        }
+    }
+
 }

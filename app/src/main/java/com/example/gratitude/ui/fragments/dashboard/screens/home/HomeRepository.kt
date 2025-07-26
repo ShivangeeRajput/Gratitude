@@ -27,4 +27,19 @@ class HomeRepository @Inject constructor(
         }
     }
 
+    suspend fun getAllQuotes(): Result<List<DailyQuote>> {
+        return try {
+            val response = apiService.getDailyQuote()
+            if (response.isSuccessful && response.body() != null) {
+                val list = response.body()!!.thoughts
+                Result.success(list)
+            } else {
+                Result.failure(Exception("Failed with code ${response.code()}"))
+            }
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+
 }
