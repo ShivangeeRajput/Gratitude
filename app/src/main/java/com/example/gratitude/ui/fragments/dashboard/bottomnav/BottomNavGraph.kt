@@ -1,0 +1,41 @@
+package com.example.gratitude.ui.fragments.dashboard.bottomnav
+
+import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import com.example.gratitude.ui.fragments.dashboard.screens.affirmations.AffirmationsScreen
+import com.example.gratitude.ui.fragments.dashboard.screens.home.HomeScreen
+import com.example.gratitude.ui.fragments.dashboard.screens.journal.JournalScreen
+import com.example.gratitude.ui.fragments.dashboard.screens.home.gratitudebuddy.GratitudeBuddyScreen
+import com.example.gratitude.ui.fragments.dashboard.screens.quote.QuotesScreen
+import com.example.gratitude.ui.viewmodels.OnboardingSharedViewModel
+
+
+@Composable
+fun BottomNavGraph(
+    navController: NavHostController,
+    sharedViewModel: OnboardingSharedViewModel
+) {
+    NavHost(navController, startDestination = BottomNavItem.Home.route) {
+        composable(BottomNavItem.Home.route) {
+            HomeScreen(
+                sharedViewModel = sharedViewModel,
+                onAssistantClick = { navController.navigate("gratitude_buddy") }
+            )
+        }
+        composable(BottomNavItem.Journal.route) {
+            JournalScreen()
+        }
+        composable(BottomNavItem.Quotes.route) {
+            QuotesScreen()
+        }
+        composable(BottomNavItem.Affirmations.route) {
+            AffirmationsScreen()
+        }
+        composable("gratitude_buddy") {
+            GratitudeBuddyScreen(navController)
+        }
+
+    }
+}

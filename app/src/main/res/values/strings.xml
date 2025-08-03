@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Gratitude</string>
+
+    <string name="onboarding_mindset">📘 Build a Grateful Mindset</string>
+    <string name="onboarding_selftalk">🧡 Develop Positive Self-Talk</string>
+    <string name="onboarding_goals">💎 Visualize Your Goals</string>
+    <string name="onboarding_inspired">🍃 Stay Inspired</string>
+
+</resources>
