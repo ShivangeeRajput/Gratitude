@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import com.example.gratitude.R
 import com.example.gratitude.ui.theme.GratitudeTheme
 import com.example.gratitude.ui.viewmodels.FakeOnboardingSharedViewModel
@@ -31,7 +32,8 @@ import com.example.gratitude.ui.viewmodels.OnboardingSharedViewModel
 fun HomeScreen(
     sharedViewModel: OnboardingSharedViewModel,
     quoteViewModel: HomeViewModel = hiltViewModel(),
-    onAssistantClick: () -> Unit = {}
+    onAssistantClick: () -> Unit = {},
+    navController: NavController,
 ) {
     val userName by sharedViewModel.userName.observeAsState("")
     val quote by quoteViewModel.quote.observeAsState()
@@ -66,6 +68,26 @@ fun HomeScreen(
                 .padding(20.dp),
             verticalArrangement = Arrangement.Top
         ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 12.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Spacer(modifier = Modifier.weight(1f))
+                IconButton(onClick = {
+                    navController.navigate("streak_screen")
+                }) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_streak),
+                        contentDescription = "Streak",
+                        tint = Color(0xFFFFC107),
+                        modifier = Modifier.size(26.dp)
+                    )
+                }
+            }
+
             Text(
                 text = "Welcome back, ${userName.ifEmpty { "Friend" }} 👋",
                 style = MaterialTheme.typography.subtitle1.copy(fontSize = 18.sp),
@@ -160,11 +182,3 @@ fun ShimmerQuoteCard() {
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun HomeScreenPreview() {
-    val fakeViewModel = FakeOnboardingSharedViewModel()
-    GratitudeTheme {
-        HomeScreen(sharedViewModel = fakeViewModel)
-    }
-}

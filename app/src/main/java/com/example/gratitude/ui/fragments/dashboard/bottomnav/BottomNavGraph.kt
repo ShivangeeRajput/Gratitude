@@ -8,6 +8,7 @@ import com.example.gratitude.ui.fragments.dashboard.screens.affirmations.Affirma
 import com.example.gratitude.ui.fragments.dashboard.screens.home.HomeScreen
 import com.example.gratitude.ui.fragments.dashboard.screens.journal.JournalScreen
 import com.example.gratitude.ui.fragments.dashboard.screens.home.gratitudebuddy.GratitudeBuddyScreen
+import com.example.gratitude.ui.fragments.dashboard.screens.home.streak.StreakScreen
 import com.example.gratitude.ui.fragments.dashboard.screens.quote.QuotesScreen
 import com.example.gratitude.ui.viewmodels.OnboardingSharedViewModel
 
@@ -21,6 +22,7 @@ fun BottomNavGraph(
         composable(BottomNavItem.Home.route) {
             HomeScreen(
                 sharedViewModel = sharedViewModel,
+                navController = navController,
                 onAssistantClick = { navController.navigate("gratitude_buddy") }
             )
         }
@@ -36,6 +38,10 @@ fun BottomNavGraph(
         composable("gratitude_buddy") {
             GratitudeBuddyScreen(navController)
         }
+        composable("streak_screen") {
+            StreakScreen()
+        }
+
 
     }
 }
