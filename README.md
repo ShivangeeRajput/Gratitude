@@ -5,9 +5,11 @@
 - **Step Personalized Onboarding** -A thoughtful onboarding flow to personalize the experience
 - **Capture current journaling habit**.
 - **Live Dashboard** - Personalized dashboard welcome message, motivational content, and more.
+- **Meditation Module** – Powered by YouTube Data API, offering guided sessions based on categories like Focus, Relaxation, and Sleep. 
 - **Journaling Support** - Track your gratitude moments and journaling habits consistently.
 - **Daily Quotes** - A collection of inspiring quotes to start your day positively.
 - **Animated & Engaging UI** - Delightful Lottie animations and confetti effects make the app fun to use.
+- 
 
 ## Screenshots  
 <p>
@@ -27,8 +29,9 @@
 <img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/fbb7a029-009e-4bd1-8cf4-be4c4118d068.jpg" height="500">
 <img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/c5b1b455-e44c-473e-a187-af9099154531.jpg" height="500">
 <img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/8e1f07fb-611b-4c8a-a388-74eac2a15e2e.jpg" height="500">
-
 <img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/146ab132-3d0a-4d41-bcfe-11db60f5e679.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/5dd30466-6543-4592-a2dc-71967d7df6ec.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/5575370f-7244-43b7-aacd-bec1257e0a6a.jpg" height="500">
 </p>
 
 ## Building With 🛠
