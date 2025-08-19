@@ -21,17 +21,15 @@
 <img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/46c8460f-2d25-47d2-9a86-b9d15762e9f7.jpg" height="500">
 <img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/43d84dc1-e768-42ee-99e4-524ea12aad8b.jpg" height="500">
 <img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/dfe76bc5-3981-45c5-bead-81ebc2ec183a.jpg" height="500">
-<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/9e6533e4-3633-4aa8-9b8d-9d2dab6e7006.jpg" height="500">
-<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/6e940020-0228-4c37-859c-34a1de9ab054.jpg" height="500">
-<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/4632c8f9-950a-4331-b4a3-bb1a53ffedb2.jpg" height="500">
-<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/b8fd840d-4d7e-46bc-a920-cad1924ba70f.jpg" height="500">
-<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/2200cb2b-2b5e-4740-b8ff-54dfe36ee151.jpg" height="500">
-<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/fbb7a029-009e-4bd1-8cf4-be4c4118d068.jpg" height="500">
-<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/c5b1b455-e44c-473e-a187-af9099154531.jpg" height="500">
-<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/8e1f07fb-611b-4c8a-a388-74eac2a15e2e.jpg" height="500">
-<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/146ab132-3d0a-4d41-bcfe-11db60f5e679.jpg" height="500">
 <img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/5dd30466-6543-4592-a2dc-71967d7df6ec.jpg" height="500">
 <img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/5575370f-7244-43b7-aacd-bec1257e0a6a.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/4cddc356-60df-42f5-affe-d111e5feb227.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/6e940020-0228-4c37-859c-34a1de9ab054.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/2cad00d4-7af2-4c59-9168-9d15f27de8ba.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/a2e91b78-02e6-4b46-86fc-12ff59efb9b6.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/2200cb2b-2b5e-4740-b8ff-54dfe36ee151.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/5ba46454-1c05-44e4-a014-79ffc89671db.jpg" height="500">
+<img src="https://github.com/ShivangeeRajput/Gratitude/assets/100294737/146ab132-3d0a-4d41-bcfe-11db60f5e679.jpg" height="500">
 </p>
 
 ## Building With 🛠
