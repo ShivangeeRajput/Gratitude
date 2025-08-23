@@ -9,7 +9,7 @@
 - **Journaling Support** - Track your gratitude moments and journaling habits consistently.
 - **Daily Quotes** - A collection of inspiring quotes to start your day positively.
 - **Animated & Engaging UI** - Delightful Lottie animations and confetti effects make the app fun to use.
-- 
+
 
 ## Screenshots  
 <p>
