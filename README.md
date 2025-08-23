@@ -1,4 +1,4 @@
-## Gratitude - A Self-Care Companion App
+## Introducing GRATITUDE - Your Self-Care Companion App
 - Gratitude is a personalized self-care app designed to help users build a habit of gratitude, mindfulness, and journaling through an engaging onboarding experience and personalized content. Built using modern Android development practices.
 
 ## Key Features  - 
