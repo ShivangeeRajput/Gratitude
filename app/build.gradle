@@ -17,7 +17,7 @@ android {
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "YT_API_KEY", "\"AIzaSyBECWSRWybzzLcT3C-yL3OkYee05fEWKm8\""
+        buildConfigField "String", "YT_API_KEY", "\"sgdhghgfdhsd\""
 
     }
 
