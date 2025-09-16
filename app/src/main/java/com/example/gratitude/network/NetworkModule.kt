@@ -13,13 +13,15 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    private const val BASE_URL = "https://raaho-boost-app.wiremockapi.cloud/"
+    private const val BASE_URL = "https://z3j5l.wiremockapi.cloud/"
+    private const val BASE_URL_YT = "https://www.googleapis.com/youtube/v3/"
 
     @Provides
     @Singleton
@@ -33,6 +35,25 @@ object NetworkModule {
             .addInterceptor(loggingInterceptor)
             .build()
     }
+
+    @Provides
+    @Singleton
+    @Named("YouTubeRetrofit")
+    fun provideYouTubeRetrofit(): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL_YT)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideYouTubeApiService(
+        @Named("YouTubeRetrofit") retrofit: Retrofit
+    ): YouTubeApiService {
+        return retrofit.create(YouTubeApiService::class.java)
+    }
+
 
     @Provides
     @Singleton

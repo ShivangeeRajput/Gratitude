@@ -9,6 +9,8 @@ import com.example.gratitude.ui.fragments.dashboard.screens.home.HomeScreen
 import com.example.gratitude.ui.fragments.dashboard.screens.journal.JournalScreen
 import com.example.gratitude.ui.fragments.dashboard.screens.home.gratitudebuddy.GratitudeBuddyScreen
 import com.example.gratitude.ui.fragments.dashboard.screens.home.streak.StreakScreen
+import com.example.gratitude.ui.fragments.dashboard.screens.meditation.MeditationDetailScreen
+import com.example.gratitude.ui.fragments.dashboard.screens.meditation.MeditationScreen
 import com.example.gratitude.ui.fragments.dashboard.screens.quote.QuotesScreen
 import com.example.gratitude.ui.viewmodels.OnboardingSharedViewModel
 
@@ -29,6 +31,9 @@ fun BottomNavGraph(
         composable(BottomNavItem.Journal.route) {
             JournalScreen()
         }
+        composable(BottomNavItem.Meditation.route) {
+            MeditationScreen(navController)
+        }
         composable(BottomNavItem.Quotes.route) {
             QuotesScreen()
         }
@@ -42,6 +47,13 @@ fun BottomNavGraph(
             StreakScreen()
         }
 
-
+        composable("meditation_detail/{category}") { backStackEntry ->
+            val category = backStackEntry.arguments?.getString("category") ?: "Unknown"
+            MeditationDetailScreen(
+                category = category,
+                navController = navController
+            )
+        }
     }
 }
+

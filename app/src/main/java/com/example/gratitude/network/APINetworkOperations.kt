@@ -24,5 +24,4 @@ interface APINetworkOperations {
     suspend fun getAffirmations(): Response<AffirmationsResponse>
 
 
-
 }
